@@ -23,6 +23,16 @@ public class DataGenerator {
         String appointmentDate = currentDate.plusDays(daysFromToday).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         return appointmentDate;
     }
+    public static String generateWrongCity(String locale){
+        Faker faker = new Faker(new Locale(locale));
+        String wrongCity = faker.address().city();
+        return wrongCity;
+    }
+    public static String generateWrongName(String locale){
+        Faker faker = new Faker(new Locale(locale));
+        String wrongName = faker.name().name();
+        return wrongName;
+    }
     
     @Value
     public static class ApplicantData {
